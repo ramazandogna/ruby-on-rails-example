@@ -1,0 +1,238 @@
+<div class="vue-demo-page">
+  <h1>🚀 Ruby on Rails + Vue.js Entegrasyonu</h1>
+  
+  <div class="comparison-section">
+    <div class="approach-comparison">
+      <div class="approach-card">
+        <h3>🏛️ Server-Side (Geleneksel Rails)</h3>
+        <ul>
+          <li>Controller'da veri hazırlanır</li>
+          <li>View server'da render edilir</li>
+          <li>HTML client'a gönderilir</li>
+          <li>Form submit'ler page refresh yapar</li>
+        </ul>
+        <p><strong>Kullanım:</strong> <%= link_to "Hello World Sayfası", hello_path %></p>
+      </div>
+      
+      <div class="approach-card">
+        <h3>⚡ Client-Side (Vue.js)</h3>
+        <ul>
+          <li>Browser'da JavaScript çalışır</li>
+          <li>API'lerle veri alışverişi</li>
+          <li>Dinamik, responsive UI</li>
+          <li>Sayfa yenilenmeden işlemler</li>
+        </ul>
+        <p><strong>Kullanım:</strong> Aşağıdaki Vue component</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Vue.js Component buraya mount edilecek -->
+  <div id="vue-app"></div>
+  
+  <div class="explanation-section">
+    <h2>📚 Rails Frontend Seçenekleri</h2>
+    
+    <div class="options-grid">
+      <div class="option-card">
+        <h4>1. Geleneksel Rails (Server-Side)</h4>
+        <p><strong>Dosyalar:</strong> <code>.html.erb</code> view'lar</p>
+        <p><strong>Render:</strong> Server'da</p>
+        <p><strong>Avantaj:</strong> SEO dostu, basit</p>
+        <p><strong>Dezavantaj:</strong> Daha az interactive</p>
+      </div>
+      
+      <div class="option-card">
+        <h4>2. Hotwire (Turbo + Stimulus)</h4>
+        <p><strong>Dosyalar:</strong> <code>stimulus_controller.js</code></p>
+        <p><strong>Render:</strong> Server'da, minimal JS</p>
+        <p><strong>Avantaj:</strong> Rails'e entegre, az JS</p>
+        <p><strong>Dezavantaj:</strong> Karmaşık UI'lar için sınırlı</p>
+      </div>
+      
+      <div class="option-card">
+        <h4>3. Vue.js / React Entegrasyonu</h4>
+        <p><strong>Dosyalar:</strong> <code>.js/.vue</code> component'lar</p>
+        <p><strong>Render:</strong> Client'ta</p>
+        <p><strong>Avantaj:</strong> Modern, interaktif UI</p>
+        <p><strong>Dezavantaj:</strong> Daha karmaşık setup</p>
+      </div>
+      
+      <div class="option-card">
+        <h4>4. Hibrit Yaklaşım (Önerilen)</h4>
+        <p><strong>Kullanım:</strong> İkisini birden</p>
+        <p><strong>Ana sayfalar:</strong> Server-side</p>
+        <p><strong>Interactive kısımlar:</strong> Vue/React</p>
+        <p><strong>Avantaj:</strong> En iyi dengeli yaklaşım</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="navigation-back">
+    <%= link_to "← Ana Sayfaya Dön", root_path, class: "btn btn-secondary" %>
+    <%= link_to "Server-Side Hello", hello_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<style>
+  .vue-demo-page {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .comparison-section {
+    margin: 30px 0;
+  }
+  
+  .approach-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  
+  .approach-card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .approach-card h3 {
+    margin-top: 0;
+    color: #495057;
+  }
+  
+  .explanation-section {
+    margin: 40px 0;
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .option-card {
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 15px;
+  }
+  
+  .option-card h4 {
+    margin-top: 0;
+    color: #007bff;
+  }
+  
+  .navigation-back {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .btn:hover {
+    opacity: 0.8;
+  }
+  
+  /* Vue App Styling */
+  .vue-greeting-app {
+    background-color: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px 0;
+  }
+  
+  .greeting-display {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+    text-align: center;
+  }
+  
+  .current-greeting {
+    font-size: 1.2em;
+  }
+  
+  .add-greeting {
+    margin: 20px 0;
+  }
+  
+  .form-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .form-group input, .form-group select, .form-group button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-group button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .form-group button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  .greetings-list ul {
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+  }
+  
+  .greetings-list li {
+    margin: 5px 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .lang {
+    color: #6c757d;
+    font-size: 0.9em;
+  }
+  
+  code {
+    background-color: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+    border: 1px solid #e9ecef;
+  }
+</style>

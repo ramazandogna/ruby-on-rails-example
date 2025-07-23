@@ -1,0 +1,84 @@
+<div class="welcome-container">
+  <h1><%= @welcome_message %></h1>
+  
+  <div class="stats">
+    <p>Veritabanında <strong><%= @total_greetings %></strong> adet selamlama var.</p>
+  </div>
+  
+  <div class="navigation">
+    <p>Test etmek için:</p>
+    <%= link_to "Hello World Sayfası (Server-Side)", hello_path, class: "btn btn-primary" %>
+    <%= link_to "Vue.js Demo (Client-Side)", vue_path, class: "btn btn-success" %>
+  </div>
+  
+  <div class="explanation">
+    <h2>Bu Uygulama Nasıl Çalışıyor?</h2>
+    <ol>
+      <li>Browser'dan <code>/</code> isteği geldi</li>
+      <li><code>config/routes.rb</code> dosyası isteği <code>HomeController#index</code>'e yönlendirdi</li>
+      <li><code>HomeController</code>'daki <code>index</code> action'ı çalıştı</li>
+      <li>Controller <code>Greeting</code> model'ini kullanarak veritabanından veri çekti</li>
+      <li>Bu <code>app/views/home/index.html.erb</code> dosyası render edildi</li>
+    </ol>
+  </div>
+</div>
+
+<style>
+  .welcome-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .stats {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .navigation {
+    text-align: center;
+    margin: 30px 0;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+  
+  .explanation {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+  }
+  
+  code {
+    background-color: #e9ecef;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: monospace;
+  }
+</style>

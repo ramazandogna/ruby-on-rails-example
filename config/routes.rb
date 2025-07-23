@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   # Vue.js sayfası
   get "vue", to: "home#vue"
   
+  # Ruby Syntax Demo sayfası
+  get "ruby", to: "home#ruby"
+  
   # API routes (Vue.js için)
   namespace :api do
     resources :greetings, only: [:index, :show, :create, :destroy]

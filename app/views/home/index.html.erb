@@ -9,6 +9,7 @@
     <p>Test etmek için:</p>
     <%= link_to "Hello World Sayfası (Server-Side)", hello_path, class: "btn btn-primary" %>
     <%= link_to "Vue.js Demo (Client-Side)", vue_path, class: "btn btn-success" %>
+    <%= link_to "Ruby Syntax Guide 🎓", ruby_path, class: "btn btn-warning" %>
   </div>
   
   <div class="explanation">
@@ -66,6 +67,15 @@
   
   .btn-success:hover {
     background-color: #218838;
+  }
+  
+  .btn-warning {
+    background-color: #ffc107;
+    color: #212529;
+  }
+  
+  .btn-warning:hover {
+    background-color: #e0a800;
   }
   
   .explanation {

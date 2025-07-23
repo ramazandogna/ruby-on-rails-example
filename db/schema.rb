@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_23_072010) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_23_141355) do
   create_table "greetings", force: :cascade do |t|
     t.string "message"
     t.string "language"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ruby_syntax_demos", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "category"
+    t.boolean "published"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

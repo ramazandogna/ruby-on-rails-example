@@ -23,3 +23,8 @@ greetings_data.each do |greeting_attrs|
 end
 
 puts "#{Greeting.count} adet greeting oluşturuldu."
+
+# Ruby Syntax Demo örnek verilerini oluştur
+puts "Ruby Syntax Demo verilerini oluşturuluyor..."
+RubySyntaxDemo.create_sample_data
+puts "#{RubySyntaxDemo.count} adet Ruby demo oluşturuldu."
